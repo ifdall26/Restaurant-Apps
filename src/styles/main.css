@@ -85,3 +85,31 @@ nav {
     min-width: 1000px;
   }
 }
+
+/* Restaurant Styles */
+.restaurants {
+  padding: 2rem;
+}
+
+.restaurant-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.restaurant-item {
+  border: 1px solid #ccc;
+  padding: 1rem;
+}
+
+.restaurant-item img {
+  width: 100%;
+}
+
+.restaurant-item h3 {
+  margin-top: 0.5rem;
+}
+
+.restaurant-item p {
+  margin-bottom: 0.5rem;
+}
