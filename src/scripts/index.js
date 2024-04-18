@@ -4,9 +4,11 @@ import "../styles/main.css";
 console.log("Hello Coders! :)");
 
 // Load restaurant data
-fetch("./public/data/DATA.json")
+console.log("Fetching restaurant data...");
+fetch("../public/data/DATA.json")
   .then((response) => response.json())
   .then((data) => {
+    console.log("Data fetched successfully:", data);
     const restaurantList = document.querySelector(".restaurant-list");
     data.restaurants.forEach((restaurant) => {
       const restaurantItem = document.createElement("div");
@@ -21,4 +23,4 @@ fetch("./public/data/DATA.json")
       restaurantList.appendChild(restaurantItem);
     });
   })
-  .catch((error) => console.log("Error fetching restaurant data:", error));
+  .catch((error) => console.error("Error fetching restaurant data:", error));
