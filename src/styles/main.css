@@ -12,7 +12,7 @@ img {
 
 /* Style untuk header */
 header {
-  background-color: lightgray; /* warna latar belakang */
+  background-color: #ff6701; /* warna latar belakang */
   padding: 10px; /* padding untuk memberikan ruang di sekitar konten */
   display: flex; /* membuat elemen header menjadi flex container */
   justify-content: space-between; /* mengatur ruang di antara elemen header */
@@ -35,7 +35,7 @@ header img {
 header h1 {
   margin: 0; /* menghapus margin default */
   font-size: 24px; /* ukuran font */
-  color: #333333; /* warna teks */
+  color: #fff; /* warna teks */
 }
 
 /* Style untuk navigasi menu */
@@ -113,46 +113,6 @@ h2 {
   margin-bottom: 5px;
 }
 
-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 50px 0;
-  text-align: center;
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footer-logo {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.footer-menu {
-  margin-bottom: 20px;
-  display: flex;
-  gap: 15px;
-}
-
-.footer-menu a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-menu a:hover {
-  color: #ff6347;
-}
-
-.footer-info {
-  font-size: 14px;
-}
-
 .drawer-button {
   display: none;
 }
@@ -206,5 +166,54 @@ footer {
   /* Tampilkan menu navigasi saat tombol drawer diklik */
   nav.show {
     display: block;
+  }
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.footer-menu {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-menu a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-menu a:hover {
+  color: #ff6347;
+}
+
+.footer-info {
+  font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .footer-menu {
+    margin-top: 20px;
   }
 }
