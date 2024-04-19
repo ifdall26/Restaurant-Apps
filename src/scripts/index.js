@@ -36,3 +36,11 @@ function renderRestaurantList(restaurants) {
 
 // Panggil fungsi renderRestaurantList dengan menggunakan data dari JSON
 renderRestaurantList(data.restaurants);
+
+// Tambahkan event listener untuk drawer button
+const drawerButton = document.querySelector(".drawer-button");
+const navigationMenu = document.querySelector("nav");
+
+drawerButton.addEventListener("click", () => {
+  navigationMenu.classList.toggle("show");
+});
