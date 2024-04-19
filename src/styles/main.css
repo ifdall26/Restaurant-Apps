@@ -17,7 +17,9 @@ img {
 /* Style untuk header */
 header {
   background-color: #fea82f; /* warna latar belakang */
-  padding: 10px; /* padding untuk memberikan ruang di sekitar konten */
+  padding-left: 10px; /* padding untuk memberikan ruang di sekitar konten */
+  padding-top: 10px; /* padding untuk memberikan ruang di sekitar konten */
+  padding-bottom: 10px; /* padding untuk memberikan ruang di sekitar konten */
   display: flex; /* membuat elemen header menjadi flex container */
   justify-content: space-between; /* mengatur ruang di antara elemen header */
   align-items: center; /* mengatur konten di tengah secara vertikal */
@@ -50,7 +52,7 @@ header h1 {
 nav ul {
   list-style-type: none; /* menghilangkan bullet points pada daftar */
   margin: 0; /* menghapus margin default */
-  padding: 0; /* menghapus padding default */
+  padding-right: 0; /* menghapus padding default */
   display: flex; /* membuat daftar menjadi flex container */
 }
 
@@ -61,6 +63,7 @@ nav li {
 nav a {
   text-decoration: none; /* menghapus garis bawah pada tautan */
   color: #fff; /* warna teks */
+  margin-right: 25px;
   font-weight: bold; /* membuat teks menjadi tebal */
 }
 
@@ -150,8 +153,8 @@ hr {
   width: 45%;
   height: 40px;
   position: absolute;
-  left: 0;
-  top: 0;
+  left: -1px;
+  top: 0px;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   border: 1px solid #ff6701;
@@ -170,6 +173,7 @@ hr {
     display: block;
     position: absolute;
     margin-top: 7px;
+    margin-right: 25px;
     top: 10px;
     right: 10px;
     font-size: 24px;
