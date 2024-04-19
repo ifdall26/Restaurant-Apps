@@ -6,17 +6,25 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+  background-color: #333;
+}
+
 img {
   display: block;
 }
 
 /* Style untuk header */
 header {
-  background-color: #ff6701; /* warna latar belakang */
+  background-color: #fea82f; /* warna latar belakang */
   padding: 10px; /* padding untuk memberikan ruang di sekitar konten */
   display: flex; /* membuat elemen header menjadi flex container */
   justify-content: space-between; /* mengatur ruang di antara elemen header */
   align-items: center; /* mengatur konten di tengah secara vertikal */
+  position: fixed;
+  width: 100%;
+  box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.5);
+  z-index: 999;
 }
 
 /* Style untuk logo dan judul */
@@ -28,7 +36,7 @@ header {
 /* Style untuk logo */
 header img {
   width: 50px; /* ukuran logo */
-  margin-right: 10px; /* jarak antara logo dan teks */
+  margin-right: 0px; /* jarak antara logo dan teks */
 }
 
 /* Style untuk judul */
@@ -52,7 +60,7 @@ nav li {
 
 nav a {
   text-decoration: none; /* menghapus garis bawah pada tautan */
-  color: #333333; /* warna teks */
+  color: #fff; /* warna teks */
   font-weight: bold; /* membuat teks menjadi tebal */
 }
 
@@ -64,6 +72,7 @@ nav a:hover {
 .hero {
   width: 100%;
   overflow: hidden;
+  box-shadow: 0px -1px 3px 1px rgba(0, 0, 0, 0.5);
 }
 
 .hero-image {
@@ -80,7 +89,14 @@ nav a:hover {
 /* CSS untuk daftar restoran menggunakan teknik Flexbox */
 h2 {
   margin-top: 15px;
+  color: #fff;
   text-align: center;
+}
+
+hr {
+  margin: auto;
+  border-bottom: 3px solid #ff6701;
+  width: 200px;
 }
 
 #restaurant-list {
@@ -88,25 +104,57 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  padding: 10px;
 }
 
 .restaurant {
+  position: relative;
   flex: 1 1 calc(33.33% - 20px); /* 3 kolom, dengan jarak 20px */
-  padding: 10px;
-  border: 1px solid #ccc;
+  padding: 15px;
+  border: 2px solid #ff6701;
+  background-color: #f0e3ca;
+  border-radius: 5px;
 }
 
 .restaurant-image {
+  border-top-right-radius: 35px;
+  border-bottom-left-radius: 35px;
   width: 100%;
   height: auto;
 }
 
 .restaurant-info {
   margin-top: 10px;
+  text-align: justify;
+  color: #000;
 }
 
 .restaurant-info h2 {
   margin-bottom: 5px;
+  color: #fea82f;
+  text-shadow: 1px 1px 3px #fea82f;
+}
+
+.restaurant-info h4 {
+  color: #ffff00;
+  text-shadow: 1px 1px 2px black;
+}
+
+.restaurant-info h5 {
+  display: block;
+  background-color: #fff;
+  line-height: 40px;
+  padding-left: 15px;
+  font-weight: bold;
+  color: #333;
+  width: 45%;
+  height: 40px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border: 1px solid #ff6701;
 }
 
 .restaurant-info p {
@@ -149,9 +197,10 @@ h2 {
     top: 60px; /* Sesuaikan berdasarkan tinggi header */
     left: 0;
     width: 100%;
-    background-color: lightgray;
+    background-color: #fea82f;
     z-index: 1;
     animation: slideDown 0.5s ease; /* Panggil animasi saat menu ditampilkan */
+    box-shadow: 0px 7px 7px 1px rgba(0, 0, 0, 0.5);
   }
 
   nav ul {
@@ -161,6 +210,7 @@ h2 {
 
   nav li {
     margin: 10px 0;
+    color: #fff;
   }
 
   /* Tampilkan menu navigasi saat tombol drawer diklik */
@@ -170,10 +220,12 @@ h2 {
 }
 
 footer {
-  background-color: #333;
+  background-color: #fea82f;
   color: #fff;
-  padding: 50px 0;
+  padding: 50px 25px;
+  margin-top: 100px;
   text-align: center;
+  box-shadow: 0 -5px 10px 2px rgba(0, 0, 0, 0.5);
 }
 
 .footer-content {
@@ -187,6 +239,7 @@ footer {
 .footer-logo {
   font-size: 24px;
   font-weight: bold;
+  color: #333;
 }
 
 .footer-menu {
@@ -196,6 +249,7 @@ footer {
 
 .footer-menu a {
   color: #fff;
+  font-weight: bold;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -206,6 +260,7 @@ footer {
 
 .footer-info {
   font-size: 14px;
+  color: #333;
 }
 
 @media screen and (max-width: 768px) {

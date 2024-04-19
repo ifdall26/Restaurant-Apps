@@ -22,10 +22,10 @@ function renderRestaurantList(restaurants) {
     restaurantElement.innerHTML = `
       <img src="${restaurant.pictureId}" alt="${restaurant.name}" class="restaurant-image" />
       <div class="restaurant-info">
+        <h4>Rating: ${restaurant.rating}</h4>
         <h2>${restaurant.name}</h2>
         <p>${restaurant.description}</p>
-        <p>City: ${restaurant.city}</p>
-        <p>Rating: ${restaurant.rating}</p>
+        <h5>City: ${restaurant.city}</h5>
       </div>
     `;
 
