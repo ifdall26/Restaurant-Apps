@@ -1,3 +1,88 @@
-img {
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* App Bar Styles */
+.app-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.brand-logo {
+  font-size: 24px;
+}
+
+.navigation-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation-menu li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.navigation-menu a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Hamburger Button Styles */
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger-bar {
   display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px 0;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+  .navigation-menu {
+    display: none;
+    text-align: center;
+  }
+
+  .hamburger-btn {
+    display: block;
+  }
+  .navigation-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #333;
+    width: 100%;
+    padding: 20px;
+    max-height: 0;
+    margin-top: -12px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .navigation-menu.active {
+    display: block;
+    max-height: 300px;
+  }
+
+  .navigation-menu ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .navigation-menu ul li {
+    margin-bottom: 10px;
+  }
 }
