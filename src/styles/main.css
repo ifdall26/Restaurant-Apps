@@ -113,7 +113,7 @@ hr {
 
 .restaurant {
   position: relative;
-  flex: 1 1 calc(33.33% - 20px); /* 3 kolom, dengan jarak 20px */
+  flex: 1 1 calc(29.33% - 20px); /* 3 kolom, dengan jarak 20px */
   padding: 15px;
   border: 2px solid #ff6701;
   background-color: #f0e3ca;
