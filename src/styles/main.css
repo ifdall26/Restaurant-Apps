@@ -12,6 +12,7 @@ body {
 
 img {
   display: block;
+  max-width: 100%; /* Pastikan gambar tidak melebihi ukuran kontainer */
 }
 
 /* Style untuk header */
@@ -165,6 +166,8 @@ hr {
 }
 
 .drawer-button {
+  width: 44px;
+  height: 44px;
   display: none;
 }
 
@@ -278,4 +281,29 @@ footer {
   .footer-menu a {
     margin-bottom: 70px;
   }
+}
+
+/* Tambahkan CSS untuk tautan "Skip to Content" */
+.skip-to-content {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+/* Tambahkan CSS untuk tombol dengan ukuran touch target minimal 44x44px */
+.drawer-button {
+  width: 44px;
+  height: 44px;
+}
+
+/* Tambahkan CSS untuk jarak antara elemen-elemen */
+/* Misalnya, antara tombol dan navigasi */
+.drawer-button,
+nav {
+  margin-top: 10px;
+}
+
+/* Tambahkan CSS untuk alternative teks pada gambar */
+img {
+  max-width: 100%; /* Pastikan gambar tidak melebihi ukuran kontainer */
 }

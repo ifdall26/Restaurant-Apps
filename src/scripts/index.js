@@ -6,6 +6,8 @@ console.log("Hello Coders! :)");
 // Import JSON data
 import data from "../public/data/DATA.json";
 
+console.log("Hello Coders! :)");
+
 // Fungsi untuk menampilkan daftar restoran
 function renderRestaurantList(restaurants) {
   const restaurantListElement = document.getElementById("restaurant-list");
@@ -43,4 +45,32 @@ const navigationMenu = document.querySelector("nav");
 
 drawerButton.addEventListener("click", () => {
   navigationMenu.classList.toggle("show");
+});
+
+// Tambahkan event listener untuk "Skip to Content"
+const skipToContentLink = document.querySelector(".skip-to-content");
+const mainContent = document.getElementById("main-content");
+
+skipToContentLink.addEventListener("click", () => {
+  mainContent.focus();
+});
+
+// Tambahkan event listener untuk navigasi dengan keyboard
+const navigationLinks = document.querySelectorAll("nav a");
+
+navigationLinks.forEach((link) => {
+  link.addEventListener("keydown", (event) => {
+    if (event.code === "Enter" || event.code === "Space") {
+      link.click();
+    }
+  });
+});
+
+// Tambahkan event listener untuk menambahkan alternative teks pada gambar tanpa atribut alt
+const images = document.querySelectorAll("img");
+
+images.forEach((image) => {
+  if (!image.alt) {
+    image.alt = ""; // Berikan nilai kosong pada alternative teks
+  }
 });

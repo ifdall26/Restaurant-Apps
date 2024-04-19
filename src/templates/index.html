@@ -7,12 +7,15 @@
     <link rel="stylesheet" href="./styles/main.css" />
   </head>
   <body>
+    <a href="#main-content" class="skip-to-content">Skip to Content</a>
+    <!-- Tambahkan tautan "Skip to Content" -->
     <header>
       <div class="header-left">
         <img src="./images/catalog_logo.png" alt="Restaurant Catalog Logo" />
         <h1>Jelajah Rasa</h1>
       </div>
-      <button class="drawer-button">&#9776;</button>
+      <button class="drawer-button" aria-label="Menu">&#9776;</button>
+      <!-- Tambahkan atribut aria-label untuk aksesibilitas -->
       <nav>
         <ul>
           <li><a href="/">Home</a></li>
@@ -36,7 +39,7 @@
       />
     </div>
 
-    <main>
+    <main id="main-content">
       <h2>Daftar Restoran</h2>
       <hr />
       <div id="restaurant-list"></div>
