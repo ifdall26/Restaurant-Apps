@@ -113,3 +113,53 @@ h2 {
 .restaurant-info p {
   margin-bottom: 5px;
 }
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.footer-menu {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.footer-menu a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-menu a:hover {
+  color: #ff6347;
+}
+
+.footer-info {
+  font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .footer-menu {
+    margin-top: 20px;
+  }
+}
