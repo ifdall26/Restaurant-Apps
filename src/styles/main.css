@@ -10,21 +10,50 @@ img {
 
 /* Style untuk header */
 header {
-  background-color: #eee;
-  padding: 10px;
-  display: flex;
-  align-items: center;
+  background-color: lightgray; /* warna latar belakang */
+  padding: 10px; /* padding untuk memberikan ruang di sekitar konten */
+  display: flex; /* membuat elemen header menjadi flex container */
+  justify-content: space-between; /* mengatur ruang di antara elemen header */
+  align-items: center; /* mengatur konten di tengah secara vertikal */
+}
+
+/* Style untuk logo dan judul */
+.header-left {
+  display: flex; /* membuat kontainer untuk logo dan judul menjadi flex container */
+  align-items: center; /* mengatur konten di tengah secara vertikal */
 }
 
 /* Style untuk logo */
 header img {
-  width: 50px;
-  margin-right: 10px;
+  width: 50px; /* ukuran logo */
+  margin-right: 10px; /* jarak antara logo dan teks */
 }
 
 /* Style untuk judul */
 header h1 {
-  margin: 0;
-  font-size: 24px;
-  color: #333333;
+  margin: 0; /* menghapus margin default */
+  font-size: 24px; /* ukuran font */
+  color: #333333; /* warna teks */
+}
+
+/* Style untuk navigasi menu */
+nav ul {
+  list-style-type: none; /* menghilangkan bullet points pada daftar */
+  margin: 0; /* menghapus margin default */
+  padding: 0; /* menghapus padding default */
+  display: flex; /* membuat daftar menjadi flex container */
+}
+
+nav li {
+  margin-left: 15px; /* jarak antara setiap item menu */
+}
+
+nav a {
+  text-decoration: none; /* menghapus garis bawah pada tautan */
+  color: #333333; /* warna teks */
+  font-weight: bold; /* membuat teks menjadi tebal */
+}
+
+nav a:hover {
+  color: #ff6347; /* warna teks saat dihover */
 }
