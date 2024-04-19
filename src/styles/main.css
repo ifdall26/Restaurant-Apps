@@ -169,16 +169,28 @@ footer {
     cursor: pointer;
   }
 
-  /* Navigation menu */
+  /* Animasi untuk muncul dari atas ke bawah */
+  @keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  /* Transisi untuk menu navigasi */
   nav {
-    display: none; /* Hide navigation menu by default */
+    display: none; /* Sembunyikan menu navigasi secara default */
     position: absolute;
-    top: 60px; /* Adjust based on header height */
+    top: 60px; /* Sesuaikan berdasarkan tinggi header */
     left: 0;
     width: 100%;
     background-color: lightgray;
-    opacity: 0.9;
     z-index: 1;
+    animation: slideDown 0.5s ease; /* Panggil animasi saat menu ditampilkan */
   }
 
   nav ul {
@@ -190,7 +202,7 @@ footer {
     margin: 10px 0;
   }
 
-  /* Show navigation menu when drawer button is clicked */
+  /* Tampilkan menu navigasi saat tombol drawer diklik */
   nav.show {
     display: block;
   }
