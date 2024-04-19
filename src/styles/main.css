@@ -1,52 +1,47 @@
-/* Reset default margins and paddings */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-body {
-  font-family: Arial, sans-serif;
-}
-
-/* Navbar styles */
-.navbar {
+/* App Bar Styles */
+.app-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background-color: #333;
   color: #fff;
   padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .brand-logo {
-  font-size: 1.5rem;
+  font-size: 24px;
 }
 
-.nav-links {
-  display: flex;
-  list-style-type: none;
+.navigation-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.nav-links li {
+.navigation-menu li {
+  display: inline-block;
   margin-right: 20px;
 }
 
-.nav-links li a {
+.navigation-menu a {
   color: #fff;
   text-decoration: none;
-  font-size: 1rem;
 }
 
-/* Hamburger button styles */
-.navbar-toggle {
+/* Hamburger Button Styles */
+.hamburger-btn {
   display: none;
-  background-color: transparent;
+  background: none;
   border: none;
   cursor: pointer;
 }
 
-.navbar-toggle .icon-bar {
+.hamburger-bar {
   display: block;
   width: 25px;
   height: 3px;
@@ -54,30 +49,40 @@ body {
   margin: 5px 0;
 }
 
-/* Responsive styles */
+/* Responsiveness */
 @media screen and (max-width: 768px) {
-  .nav-links {
+  .navigation-menu {
     display: none;
-    flex-direction: column;
-    background-color: #333;
-    padding: 10px 20px;
+    text-align: center;
+  }
+
+  .hamburger-btn {
+    display: block;
+  }
+  .navigation-menu {
+    display: none;
     position: absolute;
     top: 60px;
     left: 0;
+    background-color: #333;
     width: 100%;
-    text-align: center;
-    transition: all 0.3s ease;
-    opacity: 0;
-    pointer-events: none;
+    padding: 20px;
+    max-height: 0;
+    margin-top: -12px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
   }
-
-  .nav-links.active {
-    display: flex;
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .navbar-toggle {
+  .navigation-menu.active {
     display: block;
+    max-height: 300px;
+  }
+
+  .navigation-menu ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .navigation-menu ul li {
+    margin-bottom: 10px;
   }
 }
