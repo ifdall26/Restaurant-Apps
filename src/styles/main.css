@@ -8,25 +8,23 @@ img {
   display: block;
 }
 
-/* main.css */
-
 /* Style untuk header */
 header {
-  background-color: #eee; /* warna latar belakang */
-  padding: 20px; /* padding untuk memberikan ruang di sekitar konten */
-  display: flex; /* membuat elemen header menjadi flex container */
-  align-items: center; /* mengatur konten di tengah secara vertikal */
+  background-color: #eee;
+  padding: 10px;
+  display: flex;
+  align-items: center;
 }
 
 /* Style untuk logo */
 header img {
-  width: 50px; /* ukuran logo */
-  margin-right: 10px; /* jarak antara logo dan teks */
+  width: 50px;
+  margin-right: 10px;
 }
 
 /* Style untuk judul */
 header h1 {
-  margin: 0; /* menghapus margin default */
-  font-size: 24px; /* ukuran font */
-  color: #333333; /* warna teks */
+  margin: 0;
+  font-size: 24px;
+  color: #333333;
 }
