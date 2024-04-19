@@ -195,6 +195,7 @@ footer {
 }
 
 .footer-menu a {
+  margin-bottom: 20px;
   color: #fff;
   text-decoration: none;
   transition: color 0.3s ease;
