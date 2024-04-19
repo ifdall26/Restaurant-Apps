@@ -1,4 +1,4 @@
-import "regenerator-runtime"; /* for async await transpile */
+import "regenerator-runtime";
 import "../styles/main.css";
 
 console.log("Hello Coders! :)");
@@ -15,7 +15,7 @@ function renderRestaurantList(restaurants) {
   // Bersihkan isi dari elemen daftar restoran
   restaurantListElement.innerHTML = "";
 
-  // Loop melalui setiap restoran dan tambahkan elemen untuk setiap restoran
+  // Loop melalui setiap restoran dan elemen untuk setiap restoran
   restaurants.forEach((restaurant) => {
     const restaurantElement = document.createElement("div");
     restaurantElement.classList.add("restaurant");
@@ -31,7 +31,7 @@ function renderRestaurantList(restaurants) {
       </div>
     `;
 
-    // Tambahkan elemen restoran ke dalam daftar restoran
+    // elemen restoran ke dalam daftar restoran
     restaurantListElement.appendChild(restaurantElement);
   });
 }
@@ -39,7 +39,7 @@ function renderRestaurantList(restaurants) {
 // Panggil fungsi renderRestaurantList dengan menggunakan data dari JSON
 renderRestaurantList(data.restaurants);
 
-// Tambahkan event listener untuk drawer button
+// event listener untuk drawer button
 const drawerButton = document.querySelector(".drawer-button");
 const navigationMenu = document.querySelector("nav");
 
@@ -47,7 +47,7 @@ drawerButton.addEventListener("click", () => {
   navigationMenu.classList.toggle("show");
 });
 
-// Tambahkan event listener untuk "Skip to Content"
+// event listener untuk "Skip to Content"
 const skipToContentLink = document.querySelector(".skip-to-content");
 const mainContent = document.getElementById("main-content");
 
@@ -55,7 +55,7 @@ skipToContentLink.addEventListener("click", () => {
   mainContent.focus();
 });
 
-// Tambahkan event listener untuk navigasi dengan keyboard
+// event listener untuk navigasi dengan keyboard
 const navigationLinks = document.querySelectorAll("nav a");
 
 navigationLinks.forEach((link) => {
@@ -66,11 +66,11 @@ navigationLinks.forEach((link) => {
   });
 });
 
-// Tambahkan event listener untuk menambahkan alternative teks pada gambar tanpa atribut alt
+// event listener untuk menambahkan alternative teks pada gambar tanpa atribut alt
 const images = document.querySelectorAll("img");
 
 images.forEach((image) => {
   if (!image.alt) {
-    image.alt = ""; // Berikan nilai kosong pada alternative teks
+    image.alt = "";
   }
 });
