@@ -4,8 +4,38 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+:root {
+  --header-bg: #ff9800;
+  --p-color: #000;
+  --h2-main-color: #000;
+  --resto-bg-color: #d9edbf;
+  --resto-h2-color: #2c7865;
+  --body-color: #fff;
+  --resto-h5-color: #333;
+  --resto-h5-bg: #90d26d;
+}
+
+.dark-mode {
+  --header-bg: #ff9800;
+  --p-color: #eaeaea;
+  --body-color: #333;
+  --h2-main-color: #fff;
+  --resto-bg-color: #1b1a17;
+  --resto-h2-color: #d9edbf;
+  --resto-h5-color: #fff;
+  --resto-h5-bg: #333;
+}
+
+#theme-toggle {
+  z-index: 999;
+  position: fixed;
+  top: 75px;
+  right: 0px;
+}
+
 body {
-  background-color: #333;
+  background-color: var(--body-color);
+  transition: 0.7s;
 }
 
 img {
@@ -15,7 +45,7 @@ img {
 
 /* Style untuk header */
 header {
-  background-color: #ff9800;
+  background-color: var(--header-bg);
   padding-left: 5px;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -25,7 +55,8 @@ header {
   position: fixed;
   width: 100%;
   box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.5);
-  z-index: 999;
+  z-index: 998;
+  transition: 0.3s;
 }
 
 /* Style untuk logo dan judul */
@@ -80,7 +111,7 @@ nav a:hover {
 .hero {
   width: 100%;
   overflow: hidden;
-  border-bottom: 5px solid #fea82f;
+  border-bottom: 5px solid var(--header-bg);
   box-shadow: 0px 1px 10px 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -102,8 +133,9 @@ nav a:hover {
 /* style untuk daftar restoran */
 h2 {
   margin-top: 35px;
-  color: #fff;
+  color: var(--h2-main-color);
   text-align: center;
+  transition: 0.3s;
 }
 
 hr {
@@ -125,8 +157,9 @@ hr {
   flex: 1 1 calc(29.33% - 20px);
   padding: 15px;
   border: 2px solid #2c7865;
-  background-color: #d9edbf;
+  background-color: var(--resto-bg-color);
   border-radius: 5px;
+  transition: 0.3s;
 }
 
 .restaurant-image {
@@ -144,8 +177,9 @@ hr {
 
 .restaurant-info h2 {
   margin-bottom: 5px;
-  color: #2c7865;
+  color: var(--resto-h2-color);
   text-shadow: 1px 1px 3px #fea82f;
+  transition: 0.3s;
 }
 
 .restaurant-info h4 {
@@ -155,11 +189,11 @@ hr {
 
 .restaurant-info h5 {
   display: block;
-  background-color: #90d26d;
+  background-color: var(--resto-h5-bg);
   line-height: 40px;
   padding-left: 15px;
   font-weight: bold;
-  color: #333;
+  color: var(--resto-h5-color);
   width: 45%;
   height: 40px;
   position: absolute;
@@ -168,10 +202,13 @@ hr {
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   border: 1px solid #2c7865;
+  transition: 0.3s;
 }
 
 .restaurant-info p {
+  color: var(--p-color);
   margin-bottom: 5px;
+  transition: 0.3s;
 }
 
 @media screen and (max-width: 850px) {
@@ -225,7 +262,7 @@ hr {
     top: 50px;
     left: 0;
     width: 100%;
-    background-color: #ff9800;
+    background-color: var(--header-bg);
     z-index: 1;
     animation: slideDown 0.5s ease;
     box-shadow: 0px 7px 7px 1px rgba(0, 0, 0, 0.5);
@@ -248,7 +285,7 @@ hr {
 }
 
 footer {
-  background-color: #ff9800;
+  background-color: var(--header-bg);
   color: #fff;
   padding: 50px 25px;
   margin-top: 100px;

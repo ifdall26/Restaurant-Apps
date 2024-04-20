@@ -75,3 +75,23 @@ images.forEach((image) => {
     image.alt = "";
   }
 });
+
+// fungsi untuk color-mode
+var darkModeEnabled = false;
+
+document.getElementById("theme-toggle").addEventListener("click", function () {
+  darkModeEnabled = !darkModeEnabled;
+  if (darkModeEnabled) {
+    enableDarkMode();
+  } else {
+    disableDarkMode();
+  }
+});
+
+function enableDarkMode() {
+  document.body.classList.add("dark-mode");
+}
+
+function disableDarkMode() {
+  document.body.classList.remove("dark-mode");
+}
