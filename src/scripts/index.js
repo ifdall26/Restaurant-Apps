@@ -19,6 +19,7 @@ function renderRestaurantList(restaurants) {
   restaurants.forEach((restaurant) => {
     const restaurantElement = document.createElement("div");
     restaurantElement.classList.add("restaurant");
+    restaurantElement.setAttribute("tabindex", 0);
 
     // Tampilkan informasi restoran
     restaurantElement.innerHTML = `
