@@ -305,8 +305,25 @@ footer {
 /*  "Skip to Content" */
 .skip-to-content {
   position: absolute;
+  padding: 10px;
+  background-color: #fff;
+  height: 30px;
+  border: 1px;
+  border-style: solid;
+  border-color: #ff6701;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  line-height: 30px;
+  text-decoration: none;
   top: -9999px;
   left: -9999px;
+  transition: 1s;
+}
+
+.skip-to-content:focus {
+  top: 75px;
+  left: 0px;
+  border: 2px solid #ff6701;
 }
 
 /* tombol ukuran touch target minimal 44x44px */
