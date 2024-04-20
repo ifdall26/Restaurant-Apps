@@ -15,7 +15,7 @@ img {
 
 /* Style untuk header */
 header {
-  background-color: #fea82f;
+  background-color: #ff9800;
   padding-left: 5px;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -124,8 +124,8 @@ hr {
   position: relative;
   flex: 1 1 calc(29.33% - 20px);
   padding: 15px;
-  border: 2px solid #ff6701;
-  background-color: #f0e3ca;
+  border: 2px solid #2c7865;
+  background-color: #d9edbf;
   border-radius: 5px;
 }
 
@@ -144,7 +144,7 @@ hr {
 
 .restaurant-info h2 {
   margin-bottom: 5px;
-  color: #fea82f;
+  color: #2c7865;
   text-shadow: 1px 1px 3px #fea82f;
 }
 
@@ -155,7 +155,7 @@ hr {
 
 .restaurant-info h5 {
   display: block;
-  background-color: #fff;
+  background-color: #90d26d;
   line-height: 40px;
   padding-left: 15px;
   font-weight: bold;
@@ -167,7 +167,7 @@ hr {
   top: 0px;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-  border: 1px solid #ff6701;
+  border: 1px solid #2c7865;
 }
 
 .restaurant-info p {
@@ -225,7 +225,7 @@ hr {
     top: 50px;
     left: 0;
     width: 100%;
-    background-color: #fea82f;
+    background-color: #ff9800;
     z-index: 1;
     animation: slideDown 0.5s ease;
     box-shadow: 0px 7px 7px 1px rgba(0, 0, 0, 0.5);
@@ -248,7 +248,7 @@ hr {
 }
 
 footer {
-  background-color: #fea82f;
+  background-color: #ff9800;
   color: #fff;
   padding: 50px 25px;
   margin-top: 100px;
