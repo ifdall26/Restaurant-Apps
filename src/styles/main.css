@@ -80,7 +80,7 @@ nav a:hover {
 .hero {
   width: 100%;
   overflow: hidden;
-  box-shadow: 0px -1px 3px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 1px 10px 5px rgba(0, 0, 0, 0.5);
 }
 
 .hero-image {
@@ -94,9 +94,13 @@ nav a:hover {
   }
 }
 
+#main-content {
+  padding-top: 50px;
+}
+
 /* style untuk daftar restoran */
 h2 {
-  margin-top: 15px;
+  margin-top: 35px;
   color: #fff;
   text-align: center;
 }
