@@ -16,9 +16,9 @@ img {
 /* Style untuk header */
 header {
   background-color: #fea82f;
-  padding-left: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-left: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -61,7 +61,13 @@ nav li {
 
 nav a {
   text-decoration: none;
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-block;
+  padding: 3px;
+  line-height: 44px;
   color: #fff;
+  text-align: center;
   margin-right: 25px;
   font-weight: bold;
 }
@@ -187,7 +193,7 @@ hr {
     position: absolute;
     margin-top: 7px;
     margin-right: 25px;
-    top: 5px;
+    top: 0px;
     right: 10px;
     font-size: 24px;
     background: none;
@@ -211,7 +217,7 @@ hr {
   nav {
     display: none;
     position: absolute;
-    top: 60px;
+    top: 50px;
     left: 0;
     width: 100%;
     background-color: #fea82f;
@@ -265,6 +271,9 @@ footer {
 }
 
 .footer-menu a {
+  line-height: 44px;
+  min-width: 44px;
+  min-height: 44px;
   color: #fff;
   font-weight: bold;
   text-decoration: none;
