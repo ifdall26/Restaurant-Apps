@@ -86,6 +86,7 @@ document.getElementById("theme-toggle").addEventListener("click", function () {
   } else {
     disableDarkMode();
   }
+  this.classList.toggle("rotate-down");
 });
 
 function enableDarkMode() {
