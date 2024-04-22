@@ -13,6 +13,10 @@
   --body-color: #fff;
   --resto-h5-color: #333;
   --resto-h5-bg: #90d26d;
+  --resto-glow: 0px 0px 0px 0px rgba(144, 210, 109, 0.5),
+    0px 0px 0px 0px rgba(144, 210, 109, 0.5),
+    0px 0px 0px 0px rgba(144, 210, 109, 0.5);
+  --resto-scale: scale(1.03);
 }
 
 .dark-mode {
@@ -24,6 +28,9 @@
   --resto-h2-color: #d9edbf;
   --resto-h5-color: #fff;
   --resto-h5-bg: #333;
+  --resto-glow: 0px 0px 5px 2px rgba(144, 210, 109, 0.5),
+    0px 0px 10px 5px rgba(144, 210, 109, 0.5),
+    0px 0px 15px 7px rgba(144, 210, 109, 0.5);
 }
 
 #theme-toggle {
@@ -174,6 +181,11 @@ hr {
   background-color: var(--resto-bg-color);
   border-radius: 5px;
   transition: 0.3s;
+}
+
+.restaurant:hover {
+  box-shadow: var(--resto-glow);
+  transform: var(--resto-scale);
 }
 
 .restaurant-image {
