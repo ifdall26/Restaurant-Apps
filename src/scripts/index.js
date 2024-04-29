@@ -3,12 +3,6 @@ import "../styles/main.css";
 
 console.log("Hello Coders! :)");
 
-// Import JSON data
-import data from "../public/data/DATA.json";
-
-console.log("Hello Coders! :)");
-
-// Fungsi untuk menampilkan daftar restoran
 async function fetchRestaurantData() {
   try {
     const response = await fetch("https://restaurant-api.dicoding.dev/list");
@@ -20,39 +14,37 @@ async function fetchRestaurantData() {
   }
 }
 
-// Fungsi untuk menampilkan daftar restoran dari API
-async function renderRestaurantList() {
-  const restaurants = await fetchRestaurantData();
+function renderRestaurantList() {
   const restaurantListElement = document.getElementById("restaurant-list");
 
   // Bersihkan isi dari elemen daftar restoran
   restaurantListElement.innerHTML = "";
 
-  // Loop melalui setiap restoran dan elemen untuk setiap restoran
-  restaurants.forEach((restaurant) => {
-    const restaurantElement = document.createElement("div");
-    restaurantElement.classList.add("restaurant");
-    restaurantElement.setAttribute("tabindex", 0);
+  fetchRestaurantData().then((restaurants) => {
+    // Loop melalui setiap restoran dan elemen untuk setiap restoran
+    restaurants.forEach((restaurant) => {
+      const restaurantElement = document.createElement("div");
+      restaurantElement.classList.add("restaurant");
+      restaurantElement.setAttribute("tabindex", 0);
 
-    // Tampilkan informasi restoran
-    restaurantElement.innerHTML = `
-      <a href="detail.html?id=${restaurant.id}" style="text-decoration: none;">
-        <img src="https://restaurant-api.dicoding.dev/images/small/${restaurant.pictureId}" alt="${restaurant.name}" class="restaurant-image" />
+      // Tampilkan informasi restoran
+      restaurantElement.innerHTML = `
+        <img src="https://restaurant-api.dicoding.dev/images/medium/${restaurant.pictureId}" alt="${restaurant.name}" class="restaurant-image" />
         <div class="restaurant-info">
           <h4>Rating: ${restaurant.rating}</h4>
           <h2>${restaurant.name}</h2>
           <p>${restaurant.description}</p>
           <h5>City: ${restaurant.city}</h5>
         </div>
-      </a>
-    `;
+      `;
 
-    // elemen restoran ke dalam daftar restoran
-    restaurantListElement.appendChild(restaurantElement);
+      // elemen restoran ke dalam daftar restoran
+      restaurantListElement.appendChild(restaurantElement);
+    });
   });
 }
 
-// Panggil fungsi untuk menampilkan daftar restoran dari API
+// Panggil fungsi renderRestaurantList untuk menampilkan daftar restoran
 renderRestaurantList();
 
 // event listener untuk drawer button
