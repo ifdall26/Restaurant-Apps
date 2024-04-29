@@ -4,6 +4,9 @@ import RestoDBSource from '../../data/restodb-source';
 const Detail = {
   async render() {
     return `
+    <h2>Detail Restoran</h2>
+    <hr>
+    <br>
     <div id="restaurant" class="restaurant"></div>
     <div id="likeButtonContainer"></div>
     `;
