@@ -9,7 +9,20 @@ import data from "../public/data/DATA.json";
 console.log("Hello Coders! :)");
 
 // Fungsi untuk menampilkan daftar restoran
-function renderRestaurantList(restaurants) {
+async function fetchRestaurantData() {
+  try {
+    const response = await fetch("https://restaurant-api.dicoding.dev/list");
+    const data = await response.json();
+    return data.restaurants;
+  } catch (error) {
+    console.error("Error fetching restaurant data:", error);
+    return [];
+  }
+}
+
+// Fungsi untuk menampilkan daftar restoran dari API
+async function renderRestaurantList() {
+  const restaurants = await fetchRestaurantData();
   const restaurantListElement = document.getElementById("restaurant-list");
 
   // Bersihkan isi dari elemen daftar restoran
@@ -23,13 +36,15 @@ function renderRestaurantList(restaurants) {
 
     // Tampilkan informasi restoran
     restaurantElement.innerHTML = `
-      <img src="${restaurant.pictureId}" alt="${restaurant.name}" class="restaurant-image" />
-      <div class="restaurant-info">
-        <h4>Rating: ${restaurant.rating}</h4>
-        <h2>${restaurant.name}</h2>
-        <p>${restaurant.description}</p>
-        <h5>City: ${restaurant.city}</h5>
-      </div>
+      <a href="detail.html?id=${restaurant.id}" style="text-decoration: none;">
+        <img src="https://restaurant-api.dicoding.dev/images/small/${restaurant.pictureId}" alt="${restaurant.name}" class="restaurant-image" />
+        <div class="restaurant-info">
+          <h4>Rating: ${restaurant.rating}</h4>
+          <h2>${restaurant.name}</h2>
+          <p>${restaurant.description}</p>
+          <h5>City: ${restaurant.city}</h5>
+        </div>
+      </a>
     `;
 
     // elemen restoran ke dalam daftar restoran
@@ -37,8 +52,8 @@ function renderRestaurantList(restaurants) {
   });
 }
 
-// Panggil fungsi renderRestaurantList dengan menggunakan data dari JSON
-renderRestaurantList(data.restaurants);
+// Panggil fungsi untuk menampilkan daftar restoran dari API
+renderRestaurantList();
 
 // event listener untuk drawer button
 const drawerButton = document.querySelector(".drawer-button");
