@@ -1,12 +1,18 @@
+import UrlParser from '../../routes/url-parser';
+import RestoDBSource from '../../data/restodb-source';
+
 const Detail = {
   async render() {
     return `
-      <h2>Detail Page</h2>
+    <div id="restaurant" class="restaurant"></div>
+    <div id="likeButtonContainer"></div>
     `;
   },
  
   async afterRender() {
-    // Fungsi ini akan dipanggil setelah render()
+    const url = UrlParser.parseActiveUrlWithoutCombiner();
+    const restaurant = await RestoDBSource.DetailRestaurant(url.id);
+    console.log(restaurant);
   },
 };
  
