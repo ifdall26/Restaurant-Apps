@@ -1,3 +1,5 @@
+import RestoDBSource from '../../data/restodb-source';
+
 const Home = {
   async render() {
     return `
@@ -8,7 +10,8 @@ const Home = {
   },
  
   async afterRender() {
-    // Fungsi ini akan dipanggil setelah render()
+    const restaurant = await RestoDBSource.ListRestaurant();
+    console.log(restaurant);
   },
 };
  
