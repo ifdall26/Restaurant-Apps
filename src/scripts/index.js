@@ -1,9 +1,8 @@
 /* eslint-disable no-unused-vars */
-import "regenerator-runtime";
-import "../styles/main.css";
-
-console.log("Hello Coders! :)");
-
+import 'regenerator-runtime';
+import '../styles/main.css';
+import App from './views/app';
+ 
 
 // event listener untuk drawer button
 const drawerButton = document.querySelector(".drawer-button");
@@ -61,3 +60,9 @@ function enableDarkMode() {
 function disableDarkMode() {
   document.body.classList.remove("dark-mode");
 }
+
+const app = new App({
+  button: document.querySelector('#hamburgerButton'),
+  drawer: document.querySelector('#navigationDrawer'),
+  content: document.querySelector('#mainContent'),
+});
