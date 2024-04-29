@@ -8,7 +8,6 @@ const Detail = {
     <hr>
     <br>
     <div id="restaurant" class="restaurant"></div>
-    <div id="likeButtonContainer"></div>
     `;
   },
  
