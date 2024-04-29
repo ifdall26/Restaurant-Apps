@@ -1,3 +1,410 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --header-bg: #ff9800;
+  --p-color: #000;
+  --h2-main-color: #000;
+  --resto-bg-color: #fff;
+  --resto-h2-color: #2c7865;
+  --body-color: lightyellow;
+  --resto-h5-color: #333;
+  --resto-h5-bg: #90d26d;
+  --resto-glow: 0px 0px 0px 0px rgba(144, 210, 109, 0.5),
+    0px 0px 0px 0px rgba(144, 210, 109, 0.5),
+    0px 0px 0px 0px rgba(144, 210, 109, 0.5);
+  --resto-scale: scale(1.03);
+}
+
+.dark-mode {
+  --header-bg: #ff9800;
+  --p-color: #eaeaea;
+  --body-color: #333;
+  --h2-main-color: #fff;
+  --resto-bg-color: #1b1a17;
+  --resto-h2-color: #d9edbf;
+  --resto-h5-color: #fff;
+  --resto-h5-bg: #333;
+  --resto-glow: 0px 0px 5px 2px rgba(144, 210, 109, 0.5),
+    0px 0px 10px 5px rgba(144, 210, 109, 0.5),
+    0px 0px 15px 7px rgba(144, 210, 109, 0.5);
+}
+
+#theme-toggle {
+  background-image: url(../public/images/bw_icon.png);
+  background-size: cover;
+  z-index: 999;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  text-wrap: wrap;
+  position: fixed;
+  top: 75px;
+  right: 20px;
+}
+
+.rotate {
+  transition: transform 0.3s ease;
+}
+
+.rotate.rotate-down {
+  transform: rotate(180deg);
+}
+
+body {
+  background-color: var(--body-color);
+  transition: 0.7s;
+}
+
 img {
   display: block;
+  max-width: 100%;
+}
+
+/* Style untuk header */
+header {
+  background-color: var(--header-bg);
+  padding-left: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  transition: 0.3s;
+}
+
+/* Style untuk logo dan judul */
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+/* Style untuk logo */
+header img {
+  width: 50px;
+  margin-right: 0px;
+}
+
+/* Style untuk judul */
+header h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #fff;
+}
+
+/* Style untuk navigasi menu */
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding-right: 0;
+  display: flex;
+}
+
+nav li {
+  margin-left: 15px;
+}
+
+nav a {
+  text-decoration: none;
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-block;
+  padding: 3px;
+  line-height: 44px;
+  color: #fff;
+  text-align: center;
+  margin-right: 25px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #ff6347;
+}
+
+/* Style untuk hero element */
+.hero {
+  width: 100%;
+  overflow: hidden;
+  border-bottom: 5px solid var(--header-bg);
+  box-shadow: 0px 1px 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+.hero-image {
+  width: 100%;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 1200px) {
+  .hero-image {
+    min-width: 1000px;
+  }
+}
+
+#main-content {
+  padding-top: 50px;
+}
+
+/* style untuk daftar restoran */
+h2 {
+  margin-top: 35px;
+  color: var(--h2-main-color);
+  text-align: center;
+  transition: 0.3s;
+}
+
+hr {
+  margin: auto;
+  border-bottom: 3px solid #ff6701;
+  width: 200px;
+}
+
+#restaurant-list {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px;
+}
+
+.restaurant {
+  position: relative;
+  flex: 1 1 calc(29.33% - 20px);
+  padding: 15px;
+  border: 2px solid #2c7865;
+  background-color: var(--resto-bg-color);
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.restaurant:hover {
+  box-shadow: var(--resto-glow);
+  transform: var(--resto-scale);
+}
+
+.restaurant-image {
+  border-top-right-radius: 35px;
+  border-bottom-left-radius: 35px;
+  width: 100%;
+  height: auto;
+}
+
+.restaurant-info {
+  margin-top: 10px;
+  text-align: justify;
+  color: #000;
+}
+
+.restaurant-info h2 {
+  margin-bottom: 5px;
+  color: var(--resto-h2-color);
+  text-shadow: 1px 1px 3px #fea82f;
+  transition: 0.3s;
+}
+
+.restaurant-info h4 {
+  color: #ffff00;
+  text-shadow: 1px 1px 2px black;
+}
+
+.restaurant-info h5 {
+  display: block;
+  background-color: var(--resto-h5-bg);
+  line-height: 40px;
+  padding-left: 15px;
+  font-weight: bold;
+  color: var(--resto-h5-color);
+  width: 45%;
+  height: 40px;
+  position: absolute;
+  left: -1px;
+  top: 0px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border: 1px solid #2c7865;
+  transition: 0.3s;
+}
+
+.restaurant-info p {
+  color: var(--p-color);
+  margin-bottom: 5px;
+  transition: 0.3s;
+}
+
+@media screen and (max-width: 850px) {
+  .restaurant {
+    flex: 1 1 calc(100% - 20px);
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .restaurant {
+    flex: 1 1 calc(45% - 20px);
+  }
+}
+
+.drawer-button {
+  width: 44px;
+  height: 44px;
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .drawer-button {
+    display: block;
+    position: absolute;
+    margin-top: 7px;
+    margin-right: 25px;
+    top: 0px;
+    right: 10px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* Animasi untuk muncul dari atas ke bawah */
+  @keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  /* Transisi untuk menu navigasi */
+  nav {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background-color: var(--header-bg);
+    z-index: 1;
+    animation: slideDown 0.5s ease;
+    box-shadow: 0px 7px 7px 1px rgba(0, 0, 0, 0.5);
+  }
+
+  nav ul {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  nav li {
+    margin: 10px 0;
+    color: #fff;
+  }
+
+  /* Tampilkan menu navigasi saat tombol drawer diklik */
+  nav.show {
+    display: block;
+  }
+}
+
+footer {
+  background-color: var(--header-bg);
+  color: #fff;
+  padding: 50px 25px;
+  margin-top: 100px;
+  text-align: center;
+  box-shadow: 0 -5px 10px 2px rgba(0, 0, 0, 0.5);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.footer-menu {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-menu a {
+  line-height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-menu a:hover {
+  color: #ff6347;
+}
+
+.footer-info {
+  font-size: 14px;
+  color: #333;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .footer-menu {
+    margin-top: 20px;
+  }
+  .footer-menu a {
+    margin-bottom: 70px;
+  }
+}
+
+/*  "Skip to Content" */
+.skip-to-content {
+  position: absolute;
+  padding: 10px;
+  background-color: #fff;
+  height: 30px;
+  border: 1px;
+  border-style: solid;
+  border-color: #ff6701;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  line-height: 30px;
+  text-decoration: none;
+  top: -9999px;
+  left: -9999px;
+  transition: 1s;
+}
+
+.skip-to-content:focus {
+  top: 75px;
+  left: 0px;
+  border: 2px solid #ff6701;
+}
+
+/* tombol ukuran touch target minimal 44x44px */
+.drawer-button {
+  width: 44px;
+  height: 44px;
+}
+
+.drawer-button,
+nav {
+  margin-top: 10px;
+}
+
+img {
+  max-width: 100%;
 }

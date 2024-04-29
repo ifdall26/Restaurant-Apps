@@ -2,18 +2,60 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Restaurant Apps</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jelajah Rasa</title>
+    <link rel="stylesheet" href="./styles/main.css" />
   </head>
   <body>
-    <h1>Restaurant Apps Starter Project</h1>
-    <p>Hallo coders! Anda berhasil menjalankan starter project.</p>
-    <p>
-      Jangan lupa untuk menggunakan salah satu gambar yang berada pada ./images/heros
-      sebagai background hero elemen.
-    </p>
-    <img src="./images/heros/hero-image_1.jpg" width="450" alt="" />
-    <img src="./images/heros/hero-image_2.jpg" width="450" alt="" />
-    <img src="./images/heros/hero-image_3.jpg" width="450" alt="" />
-    <img src="./images/heros/hero-image_4.jpg" width="450" alt="" />
+    <a href="#main-content" class="skip-to-content" id="skip-to-content-link"
+      >Skip to Content</a
+    >
+    <button id="theme-toggle" class="rotate"></button>
+    <header>
+      <div class="header-left">
+        <img src="./images/catalog_logo.png" alt="Restaurant Catalog Logo" />
+        <h1>Jelajah Rasa</h1>
+      </div>
+      <button class="drawer-button" aria-label="Menu">☰</button>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="#">Favorite</a></li>
+          <li>
+            <a
+              target="blank"
+              href="https://www.linkedin.com/in/ifdal-lisyukri-b567372a4/"
+              >About Us</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <img
+        src="./images/heros/hero-image_2.jpg"
+        alt="Hero Image"
+        class="hero-image"
+      />
+    </div>
+
+    <main id="main-content" tabindex="0"></main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-logo">Restaurant Apps</div>
+        <div class="footer-menu">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="footer-info">
+          &copy; 2024 - Jelajah Rasa. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script src="./scripts/index.js"></script>
   </body>
 </html>
