@@ -39,7 +39,7 @@ const createRestoDetailTemplate = (restaurant) => `
       </div>
     </div>
     <div class="restaurant-detail__reviews">
-      <h3>Customer Reviews</h3>
+      <h2>Customer Reviews</h2>
       <ul class="restaurant-detail__review-list">
         ${restaurant.customerReviews.map(review => `
           <li>
