@@ -8,7 +8,7 @@ const Detail = {
       <h2>Detail Restoran</h2>
       <hr>
       <br>
-      <div id="restaurant" class="restaurant"></div>
+      <div id="restaurant" class="restaurant-detail"></div>
     `;
   },
  

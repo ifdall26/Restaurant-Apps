@@ -25,14 +25,18 @@ const createRestoDetailTemplate = (restaurant) => `
       </div>
     </div>
     <div class="restaurant-detail__menu">
-      <h3>Menu Makanan</h3>
-      <ul class="restaurant-detail__food-menu">
-        ${restaurant.menus.foods.map(food => `<li>${food.name}</li>`).join('')}
-      </ul>
-      <h3>Menu Minuman</h3>
-      <ul class="restaurant-detail__drink-menu">
-        ${restaurant.menus.drinks.map(drink => `<li>${drink.name}</li>`).join('')}
-      </ul>
+      <div class="restaurant-detail__food">
+        <h3>Menu Makanan</h3>
+        <ul class="restaurant-detail__food-menu">
+          ${restaurant.menus.foods.map(food => `<li>${food.name}</li>`).join('')}
+        </ul>
+      </div>
+      <div class="restaurant-detail__food">
+        <h3>Menu Minuman</h3>
+        <ul class="restaurant-detail__drink-menu">
+          ${restaurant.menus.drinks.map(drink => `<li>${drink.name}</li>`).join('')}
+        </ul>
+      </div>
     </div>
     <div class="restaurant-detail__reviews">
       <h3>Customer Reviews</h3>
