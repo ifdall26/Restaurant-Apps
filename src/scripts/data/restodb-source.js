@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /* eslint-disable padded-blocks */
 import API_ENDPOINT from '../globals/api-endpoint';
 
