@@ -90,6 +90,7 @@ header {
 header img {
   width: 50px;
   margin-right: 0px;
+  border-radius: 50%;
 }
 
 /* Style untuk judul */
