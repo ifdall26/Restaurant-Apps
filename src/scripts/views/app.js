@@ -1,4 +1,6 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable no-console */
+/* eslint-disable linebreak-style */
 /* eslint-disable no-underscore-dangle */
 import DrawerInitiator from '../utils/drawer-initiator';
 import UrlParser from '../routes/url-parser';
