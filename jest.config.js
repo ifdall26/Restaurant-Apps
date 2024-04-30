@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /* eslint-disable max-len */
 /**
  * For a detailed explanation regarding each configuration property, visit:
