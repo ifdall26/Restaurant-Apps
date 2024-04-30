@@ -1,5 +1,5 @@
 import RestoDBSource from '../../data/restodb-source';
-import {createRestiListTemplate} from '../templates/template-creator';
+import {createRestoListTemplate} from '../templates/template-creator';
 
 const Home = {
   async render() {
@@ -14,7 +14,7 @@ const Home = {
     const restaurants = await RestoDBSource.ListRestaurant();
     const restaurantContainer = document.querySelector('#restaurant-list');
     restaurants.forEach((restaurant) => {
-      restaurantContainer.innerHTML += createRestiListTemplate (restaurant)
+      restaurantContainer.innerHTML += createRestoListTemplate (restaurant)
     });
   },
 };
