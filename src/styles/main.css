@@ -94,8 +94,11 @@ header img {
 
 /* Style untuk judul */
 header h1 {
+  /* font-family: "Permanent Marker", cursive; */
+  font-family: "Lilita One", sans-serif;
   margin: 0;
-  font-size: 24px;
+  font-size: 30px;
+  text-shadow: 3px 3px 1px black;
   color: #fff;
 }
 
@@ -157,6 +160,11 @@ h2 {
   color: var(--h2-main-color);
   text-align: center;
   transition: 0.3s;
+  font-family: "Protest Riot", sans-serif;
+}
+
+h3{
+  font-family: "Caveat", cursive;
 }
 
 hr {
