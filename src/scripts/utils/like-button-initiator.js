@@ -36,7 +36,7 @@ const LikeButtonInitiator = {
  
     const likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', async () => {
-      await FavoriteRestoIdb.putMovie(this._resto);
+      await FavoriteRestoIdb.putResto(this._resto);
       this._renderButton();
     });
   },
@@ -46,7 +46,7 @@ const LikeButtonInitiator = {
  
     const likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', async () => {
-      await FavoriteRestoIdb.deleteMovie(this._resto.id);
+      await FavoriteRestoIdb.deleteResto(this._resto.id);
       this._renderButton();
     });
   },
