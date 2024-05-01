@@ -26,12 +26,13 @@ const Detail = {
     restaurantContainer.innerHTML = createRestoDetailTemplate(restaurant);
     LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
-      resto: {
+      restaurant: {
         id: restaurant.id,
-        title: restaurant.title,
-        overview: restaurant.overview,
-        backdrop_path: restaurant.backdrop_path,
-        vote_average: restaurant.vote_average,
+        name: restaurant.name,
+        description: restaurant.description,
+        pictureId: restaurant.pictureId,
+        city: restaurant.city,
+        rating: restaurant.rating,
       },
     });
   },
