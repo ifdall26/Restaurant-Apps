@@ -50,9 +50,6 @@ const createRestoDetailTemplate = (restaurant) => `
         `).join('')}
       </ul>
     </div>
-    <div class="restaurant-detail__favorite">
-      <button id="favoriteButton" class="favorite-button">${restaurant.isFavorite ? 'Remove from Favorites' : 'Add to Favorites'}</button>
-    </div>
   </div>
 `;
 
