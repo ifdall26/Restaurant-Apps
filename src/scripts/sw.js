@@ -18,12 +18,10 @@ const assetsToCache = [
   './icons/icon-192x192.png',
   './icons/icon-384x384.png',
   './icons/icon-512x512.png',
-  './images/heros/hero-image_2.jpg',
-  './images/bw_icon.png',
-  './images/catalog_logo.png',
   './index.html',
   './favicon.png',
   './app.bundle.js',
+  './config.js',
   './app.webmanifest',
   './sw.bundle.js',
 ];
@@ -44,7 +42,6 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   console.log(event.request);
 
-  event.respondWith(fetch(event.request));
   event.respondWith(CacheHelper.revalidateCache(event.request));
   // TODO: Add/get fetch request to/from caches
 });
