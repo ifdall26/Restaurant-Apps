@@ -5,6 +5,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-restricted-globals */
 /* eslint-disable linebreak-style */
+import 'regenerator-runtime';
 import CacheHelper from './utils/cache-helper';
  
 // Daftar asset yang akan di-caching
