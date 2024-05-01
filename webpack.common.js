@@ -5,12 +5,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { GenerateSW } = require('workbox-webpack-plugin');
-const { InjectManifest } = require('workbox-webpack-plugin');
 
 module.exports = {
   entry: {
     app: path.resolve(__dirname, 'src/scripts/index.js'),
-    sw: path.resolve(__dirname, 'src/scripts/sw.js'),
   },
   output: {
     filename: '[name].bundle.js',
@@ -21,14 +19,7 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: [
-          {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader',
-          },
-        ],
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
@@ -48,13 +39,8 @@ module.exports = {
       ],
     }),
     new GenerateSW({
-      swDest: './sw.bundle.js',
-      /* Opsi konfigurasi lainnya didefinisikan di sini */
-    }),
-    new InjectManifest({
-      swSrc: path.resolve(__dirname, 'src/scripts/sw.js'),
-      swDest: './sw.js',
-      /* Opsi konfigurasi lainnya didefinisikan di sini */
+      swDest: 'sw.bundle.js', // Nama file service worker yang akan dihasilkan
+      // Konfigurasi WorkboxWebpackPlugin lainnya
     }),
   ],
 };

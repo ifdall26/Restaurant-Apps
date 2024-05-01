@@ -6,7 +6,7 @@
   "scripts": {
     "start-dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "serve": "http-server dist",
+    "serve": "http-server dist --port 8080",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "lint": "eslint ./src"
@@ -44,6 +44,7 @@
     "workbox-webpack-plugin": "^7.1.0"
   },
   "dependencies": {
-    "regenerator-runtime": "^0.14.0"
+    "regenerator-runtime": "^0.14.0",
+    "workbox-window": "^7.1.0"
   }
 }
