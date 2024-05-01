@@ -5,7 +5,7 @@
 /* eslint-disable no-trailing-spaces */
 /* eslint-disable linebreak-style */
 import FavoriteRestoIdb from '../../data/favorite-resto-idb';
-import { createRestoItemTemplate } from '../templates/template-creator';
+import { createRestoListTemplate } from '../templates/template-creator';
 
 const Favorite = {
   async render() {
@@ -18,10 +18,10 @@ const Favorite = {
 
   async afterRender() {
     const restaurants = await FavoriteRestoIdb.getAllRestos();
-    const restaurantContainer = document.querySelector('#restaurants');
+    const restaurantContainer = document.querySelector('#restaurant-list');
     
-    restaurants.forEach((resto) => {
-      restaurantContainer.innerHTML += createRestoItemTemplate(resto);
+    restaurants.forEach((restaurant) => {
+      restaurantContainer.innerHTML += createRestoListTemplate(restaurant);
     });
   },
 };

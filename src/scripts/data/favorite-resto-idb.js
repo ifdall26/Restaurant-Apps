@@ -21,8 +21,8 @@ const FavoriteRestoIdb = {
   async getAllRestos() {
     return (await dbPromise).getAll(OBJECT_STORE_NAME);
   },
-  async putResto(resto) {
-    return (await dbPromise).put(OBJECT_STORE_NAME, resto);
+  async putResto(restaurant) {
+    return (await dbPromise).put(OBJECT_STORE_NAME, restaurant);
   },
   async deleteResto(id) {
     return (await dbPromise).delete(OBJECT_STORE_NAME, id);
