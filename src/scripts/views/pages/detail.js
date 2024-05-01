@@ -1,4 +1,6 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable no-undef */
+/* eslint-disable linebreak-style */
 import UrlParser from '../../routes/url-parser';
 import RestoDBSource from '../../data/restodb-source';
 import { createRestoDetailTemplate } from '../templates/template-creator';
@@ -10,6 +12,7 @@ const Detail = {
       <hr>
       <br>
       <div id="restaurant" class="restaurant-detail"></div>
+      <div id="likeButtonContainer"></div>
     `;
   },
 
@@ -18,6 +21,8 @@ const Detail = {
     const restaurant = await RestoDBSource.DetailRestaurant(url.id);
     const restaurantContainer = document.querySelector('#restaurant');
     restaurantContainer.innerHTML = createRestoDetailTemplate(restaurant);
+    const likeButtonContainer = document.querySelector('#likeButtonContainer');
+    likeButtonContainer.innerHTML = createLikeButtonTemplate();
   },
 };
 
