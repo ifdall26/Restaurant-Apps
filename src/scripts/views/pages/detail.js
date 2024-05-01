@@ -3,7 +3,7 @@
 /* eslint-disable linebreak-style */
 import UrlParser from '../../routes/url-parser';
 import RestoDBSource from '../../data/restodb-source';
-import { createRestoDetailTemplate } from '../templates/template-creator';
+import { createRestoDetailTemplate, createLikeButtonTemplate } from '../templates/template-creator';
 
 const Detail = {
   async render() {
