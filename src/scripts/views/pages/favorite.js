@@ -2,7 +2,8 @@
 const Favorite = {
   async render() {
     return `
-      <h2>Favorite page</h2>
+      <h2>Restoran Favoritmu:)</h2>
+      <hr>
     `;
   },
 
