@@ -28,3 +28,5 @@ const FavoriteRestoIdb = {
     return (await dbPromise).delete(OBJECT_STORE_NAME, id);
   },
 };
+
+export default FavoriteRestoIdb;
