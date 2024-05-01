@@ -380,14 +380,22 @@ footer {
   background-color: #db0000;
   
   position: fixed;
-  bottom: 16px;
-  right: 16px;
+  top: 75px;
+  left: -27px;
   border-radius: 50%;
   border: 0;
   
   font-size: 18px;
   color: white;
   cursor: pointer;
+
+  transition: .3s;
+  transform: rotate(0deg);
+}
+
+.like:hover{
+  left: 20px;
+  transform: rotate(360deg);
 }
 
 @media screen and (max-width: 768px) {
