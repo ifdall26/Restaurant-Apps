@@ -53,6 +53,7 @@ const createRestoDetailTemplate = (restaurant) => `
     <div class="restaurant-detail__add-review">
       <h2>Add Your Review</h2>
       <form id="reviewForm" class="review-form">
+        <input type="hidden" id="restaurantId" name="restaurantId" value="${restaurant.id}">
         <div class="form-group">
           <label for="name">Your Name:</label>
           <input type="text" id="name" name="name" required>
