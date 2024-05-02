@@ -182,9 +182,28 @@ hr {
   padding: 10px;
 }
 
+@media screen and (max-width: 820px) {
+  #restaurant-list {
+    flex: 1 1 90%-40px;
+    margin-bottom: 10px; 
+  }
+}
+
+@media screen and (min-width: 821px) and (max-width: 1300px) {
+  #restaurant-list {
+    flex: 1 1 calc(45% - 20px);
+  }
+}
+
+@media screen and (min-width: 1301px) {
+  #restaurant-list {
+    flex: 1 1 calc(29.33% - 20px);
+  }
+}
+
 .restaurant {
   position: relative;
-  flex: 1 1 calc(29.33% - 20px);
+  /* flex: 1 1 calc(29.33% - 20px); */
   padding: 15px;
   border: 2px solid #2c7865;
   background-color: var(--resto-bg-color);
@@ -246,17 +265,6 @@ hr {
   transition: 0.3s;
 }
 
-@media screen and (max-width: 850px) {
-  .restaurant {
-    flex: 1 1 calc(100% - 20px);
-  }
-}
-
-@media screen and (max-width: 1300px) {
-  .restaurant {
-    flex: 1 1 calc(45% - 20px);
-  }
-}
 
 .drawer-button {
   width: 44px;
@@ -500,14 +508,12 @@ img {
   flex: 1;
   margin-top: 15px;
   border: 2px dotted var(--resto-h2-color);
-  padding: 25px;
   border-radius: 10px;
 }
 
 .restaurant-detail__menu{
   display: flex;
   flex-wrap: wrap ;
-  /* flex-direction: column; */
   justify-content: space-between;
 }
 
@@ -523,36 +529,37 @@ img {
   border-radius: 10px;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 450px){
+  .restaurant-detail__menu{
+    flex: 1 1 calc(95% - 20px);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media screen and (min-width: 451px) and (max-width: 1279px){
   .restaurant-detail-image {
     width: 100%;
   }
   .restaurant-detail__menu{
-    flex: 1 1 calc(45% - 20px);
+    flex: 1 1 calc(95% - 20px);
+    padding-top: 15px;
+    padding-bottom: 15px;
     padding-left: 100px;
     padding-right: 100px;
   }
 }
 
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 1280px) {
   .restaurant-detail h3{
     text-align: left;
   }
   .restaurant-detail__menu{
-    flex: 1 1 calc(45% - 20px);
-    padding-left: 150px;
-    padding-right: 150px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 300px;
+    padding-right: 300px;
   }
-}
-
-@media screen and (min-width: 1300px) {
-  .restaurant-detail h3{
-    text-align: left;
-  }
-  .restaurant-detail__menu{
-    flex: 1 1 calc(45% - 20px);
-    padding-left: 350px;
-    padding-right: 350px;
-  }
-  
 }
