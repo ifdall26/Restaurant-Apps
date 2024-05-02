@@ -50,6 +50,30 @@ const createRestoDetailTemplate = (restaurant) => `
         `).join('')}
       </ul>
     </div>
+    <div class="restaurant-detail__add-review">
+      <h2>Add Your Review</h2>
+      <form id="reviewForm" class="review-form">
+        <div class="form-group">
+          <label for="name">Your Name:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="rating">Rating:</label>
+          <select id="rating" name="rating" required>
+            <option value="1">1 - Poor</option>
+            <option value="2">2 - Fair</option>
+            <option value="3">3 - Good</option>
+            <option value="4">4 - Very Good</option>
+            <option value="5">5 - Excellent</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="comment">Your Review:</label>
+          <textarea id="comment" name="comment" required></textarea>
+        </div>
+        <button type="submit">Submit Review</button>
+      </form>
+    </div>
   </div>
 `;
 
