@@ -1,4 +1,6 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable quotes */
+/* eslint-disable linebreak-style */
 /* eslint-disable func-names */
 /* eslint-disable linebreak-style */
 /* eslint-disable no-use-before-define */
@@ -16,68 +18,70 @@ const app = new App({
   content: document.querySelector('#mainContent'),
 });
 
-// event listener untuk drawer button
-const drawerButton = document.querySelector('.drawer-button');
-const navigationMenu = document.querySelector('nav');
+document.addEventListener("DOMContentLoaded", () => {
+  // event listener untuk drawer button
+  const drawerButton = document.querySelector('.drawer-button');
+  const navigationMenu = document.querySelector('nav');
 
-drawerButton.addEventListener('click', () => {
-  navigationMenu.classList.toggle('show');
-});
+  drawerButton.addEventListener('click', () => {
+    navigationMenu.classList.toggle('show');
+  });
 
-// event listener untuk "Skip to Content"
-const skipToContentLink = document.querySelector('.skip-to-content');
-const mainContent = document.getElementById('main-content');
+  // event listener untuk "Skip to Content"
+  const skipToContentLink = document.querySelector(".skip-to-content");
+  const mainContent = document.getElementById("mainContent");
 
-skipToContentLink.addEventListener('click', () => {
-  mainContent.focus();
-});
+  skipToContentLink.addEventListener("click", () => {
+    mainContent.focus();
+  });
 
-// event listener untuk navigasi dengan keyboard
-const navigationLinks = document.querySelectorAll('nav a');
+  // event listener untuk navigasi dengan keyboard
+  const navigationLinks = document.querySelectorAll('nav a');
 
-navigationLinks.forEach((link) => {
-  link.addEventListener('keydown', (event) => {
-    if (event.code === 'Enter' || event.code === 'Space') {
-      link.click();
+  navigationLinks.forEach((link) => {
+    link.addEventListener('keydown', (event) => {
+      if (event.code === 'Enter' || event.code === 'Space') {
+        link.click();
+      }
+    });
+  });
+
+  // event listener untuk menambahkan alternative teks pada gambar tanpa atribut alt
+  const images = document.querySelectorAll('img');
+
+  images.forEach((image) => {
+    if (!image.alt) {
+      image.alt = '';
     }
   });
-});
 
-// event listener untuk menambahkan alternative teks pada gambar tanpa atribut alt
-const images = document.querySelectorAll('img');
+  // fungsi untuk color-mode
+  let darkModeEnabled = false;
 
-images.forEach((image) => {
-  if (!image.alt) {
-    image.alt = '';
+  document.getElementById('theme-toggle').addEventListener('click', function () {
+    darkModeEnabled = !darkModeEnabled;
+    if (darkModeEnabled) {
+      enableDarkMode();
+    } else {
+      disableDarkMode();
+    }
+    this.classList.toggle('rotate-down');
+  });
+
+  function enableDarkMode() {
+    document.body.classList.add('dark-mode');
   }
-});
 
-// fungsi untuk color-mode
-let darkModeEnabled = false;
-
-document.getElementById('theme-toggle').addEventListener('click', function () {
-  darkModeEnabled = !darkModeEnabled;
-  if (darkModeEnabled) {
-    enableDarkMode();
-  } else {
-    disableDarkMode();
+  function disableDarkMode() {
+    document.body.classList.remove('dark-mode');
   }
-  this.classList.toggle('rotate-down');
-});
 
-function enableDarkMode() {
-  document.body.classList.add('dark-mode');
-}
+  window.addEventListener('hashchange', () => {
+    app.renderPage();
+  });
 
-function disableDarkMode() {
-  document.body.classList.remove('dark-mode');
-}
-
-window.addEventListener('hashchange', () => {
-  app.renderPage();
-});
-
-window.addEventListener('load', () => {
-  app.renderPage();
-  swRegister();
+  window.addEventListener('load', () => {
+    app.renderPage();
+    swRegister();
+  });
 });
