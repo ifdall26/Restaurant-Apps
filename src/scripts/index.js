@@ -1,4 +1,6 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable no-undef */
+/* eslint-disable linebreak-style */
 /* eslint-disable quotes */
 /* eslint-disable linebreak-style */
 /* eslint-disable func-names */
@@ -32,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const mainContent = document.getElementById("mainContent");
 
   skipToContentLink.addEventListener("click", () => {
+    e.preventDefault();
     mainContent.focus();
   });
 
