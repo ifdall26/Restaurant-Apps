@@ -47,6 +47,7 @@ const addReviewFormListener = () => {
         setTimeout(() => {
           location.reload();
         }, 1000);
+        location.reload();
       } else {
         alert('Gagal menambahkan review.');
       }
