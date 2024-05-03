@@ -44,7 +44,9 @@ const addReviewFormListener = () => {
 
       if (responseData.error === false) {
         alert('Review berhasil ditambahkan!');
-        location.reload();
+        setTimeout(() => {
+          location.reload();
+        }, 1000);
       } else {
         alert('Gagal menambahkan review.');
       }
