@@ -31,8 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const skipToContentLink = document.querySelector(".skip-to-content");
   const mainContent = document.getElementById("mainContent");
 
-  skipToContentLink.addEventListener("click", (e) => {
-    e.preventDefault();
+  skipToContentLink.addEventListener("click", () => {
     mainContent.focus();
   });
 
