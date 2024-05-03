@@ -26,8 +26,8 @@ const addReviewFormListener = () => {
     // Buat objek review
     const review = {
       id: restaurantId,
-      name: name,
-      review: comment
+      name,
+      review: comment,
     };
 
     try {
@@ -35,9 +35,9 @@ const addReviewFormListener = () => {
       const response = await fetch('https://restaurant-api.dicoding.dev/review', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify(review)
+        body: JSON.stringify(review),
       });
 
       const responseData = await response.json();
@@ -57,7 +57,6 @@ const addReviewFormListener = () => {
     }
   });
 };
-
 
 const Detail = {
   async render() {

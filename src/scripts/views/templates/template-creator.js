@@ -28,20 +28,20 @@ const createRestoDetailTemplate = (restaurant) => `
       <div class="restaurant-detail__food">
         <h3>Menu Makanan</h3>
         <ul class="restaurant-detail__food-menu">
-          ${restaurant.menus.foods.map(food => `<li>${food.name}</li>`).join('')}
+          ${restaurant.menus.foods.map((food) => `<li>${food.name}</li>`).join('')}
         </ul>
       </div>
       <div class="restaurant-detail__food">
         <h3>Menu Minuman</h3>
         <ul class="restaurant-detail__drink-menu">
-          ${restaurant.menus.drinks.map(drink => `<li>${drink.name}</li>`).join('')}
+          ${restaurant.menus.drinks.map((drink) => `<li>${drink.name}</li>`).join('')}
         </ul>
       </div>
     </div>
     <div class="restaurant-detail__reviews">
       <h2>Customer Reviews</h2>
       <ul class="restaurant-detail__review-list">
-        ${restaurant.customerReviews.map(review => `
+        ${restaurant.customerReviews.map((review) => `
           <li>
             <p><strong>${review.name}</strong></p>
             <p>${review.date}</p>
@@ -83,11 +83,13 @@ const createLikeButtonTemplate = () => `
      <i class="fa fa-heart-o" aria-hidden="true"></i>
   </button>
 `;
- 
+
 const createLikedButtonTemplate = () => `
   <button aria-label="hapus restoran ini ke favorit" id="likeButton" class="like">
     <i class="fa fa-heart" aria-hidden="true"></i>
   </button>
 `;
 
-export { createRestoListTemplate, createRestoDetailTemplate, createLikeButtonTemplate, createLikedButtonTemplate };
+export {
+  createRestoListTemplate, createRestoDetailTemplate, createLikeButtonTemplate, createLikedButtonTemplate,
+};
