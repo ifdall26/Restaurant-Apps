@@ -44,7 +44,7 @@ const addReviewFormListener = () => {
 
       if (responseData.error === false) {
         alert('Review berhasil ditambahkan!');
-        // Lakukan apa pun yang diperlukan setelah review berhasil ditambahkan, misalnya refresh halaman atau tampilkan ulasan baru secara langsung
+        location.reload();
       } else {
         alert('Gagal menambahkan review.');
       }
