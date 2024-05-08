@@ -1,12 +1,5 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable no-trailing-spaces */
-/* eslint-disable linebreak-style */
-/* eslint-disable no-console */
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-restricted-globals */
-/* eslint-disable linebreak-style */
 import CacheHelper from './utils/cache-helper';
- 
+
 // Daftar asset yang akan di-caching
 const assetsToCache = [
   './',
