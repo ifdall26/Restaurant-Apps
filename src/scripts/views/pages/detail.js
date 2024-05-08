@@ -1,13 +1,6 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable arrow-parens */
-/* eslint-disable linebreak-style */
-/* eslint-disable no-unused-vars */
-/* eslint-disable linebreak-style */
-/* eslint-disable no-undef */
-/* eslint-disable linebreak-style */
 import UrlParser from '../../routes/url-parser';
 import RestoDBSource from '../../data/restodb-source';
-import { createRestoDetailTemplate, createLikeButtonTemplate } from '../templates/template-creator';
+import { createRestoDetailTemplate } from '../templates/template-creator';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
 
 // Fungsi untuk menambahkan event listener untuk form review
@@ -20,6 +13,7 @@ const addReviewFormListener = () => {
     // Ambil nilai-nilai dari form
     const restaurantId = document.getElementById('restaurantId').value;
     const name = document.getElementById('name').value;
+    // eslint-disable-next-line no-unused-vars
     const rating = document.getElementById('rating').value;
     const comment = document.getElementById('comment').value;
 
@@ -92,7 +86,7 @@ const Detail = {
     const reviewContainer = document.querySelector('.restaurant-detail__review-list');
     reviewContainer.innerHTML = ''; // Bersihkan daftar review sebelum memuat ulang
     const updatedRestaurant = await RestoDBSource.DetailRestaurant(url.id); // Ambil data restoran terbaru dari server
-    updatedRestaurant.customerReviews.forEach(review => {
+    updatedRestaurant.customerReviews.forEach((review) => {
       reviewContainer.innerHTML += `
         <li>
           <p><strong>${review.name}</strong></p>

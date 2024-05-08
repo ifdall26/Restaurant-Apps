@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import RestoDBSource from '../../data/restodb-source';
 import { createRestoListTemplate } from '../templates/template-creator';
 
