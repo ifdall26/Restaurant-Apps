@@ -1,5 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable padded-blocks */
 import API_ENDPOINT from '../globals/api-endpoint';
 
 class RestoDBSource {
@@ -13,7 +11,6 @@ class RestoDBSource {
     const response = await fetch(API_ENDPOINT.DETAIL(id));
     const responseJson = await response.json();
     return responseJson.restaurant;
-
   }
 }
 
