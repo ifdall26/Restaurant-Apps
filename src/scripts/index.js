@@ -1,12 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable quotes */
-/* eslint-disable linebreak-style */
-/* eslint-disable func-names */
-/* eslint-disable linebreak-style */
-/* eslint-disable no-use-before-define */
-/* eslint-disable no-param-reassign */
-/* eslint-disable linebreak-style */
-/* eslint-disable no-unused-vars */
 import 'regenerator-runtime';
 import '../styles/main.css';
 import App from './views/app';
@@ -18,7 +9,7 @@ const app = new App({
   content: document.querySelector('#mainContent'),
 });
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   // event listener untuk drawer button
   const drawerButton = document.querySelector('.drawer-button');
   const navigationMenu = document.querySelector('nav');
@@ -28,10 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // event listener untuk "Skip to Content"
-  const skipToContentLink = document.querySelector(".skip-to-content");
-  const mainContent = document.getElementById("mainContent");
+  const skipToContentLink = document.querySelector('.skip-to-content');
+  const mainContent = document.getElementById('mainContent');
 
-  skipToContentLink.addEventListener("click", () => {
+  skipToContentLink.addEventListener('click', () => {
     mainContent.focus();
   });
 
@@ -51,6 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   images.forEach((image) => {
     if (!image.alt) {
+      // eslint-disable-next-line no-param-reassign
       image.alt = '';
     }
   });
@@ -58,11 +50,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // fungsi untuk color-mode
   let darkModeEnabled = false;
 
+  // eslint-disable-next-line func-names
   document.getElementById('theme-toggle').addEventListener('click', function () {
     darkModeEnabled = !darkModeEnabled;
     if (darkModeEnabled) {
+      // eslint-disable-next-line no-use-before-define
       enableDarkMode();
     } else {
+      // eslint-disable-next-line no-use-before-define
       disableDarkMode();
     }
     this.classList.toggle('rotate-down');
