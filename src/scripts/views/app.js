@@ -1,25 +1,21 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable no-console */
-/* eslint-disable linebreak-style */
-/* eslint-disable no-underscore-dangle */
 import DrawerInitiator from '../utils/drawer-initiator';
 import UrlParser from '../routes/url-parser';
 import routes from '../routes/routes';
 
 class App {
   constructor({ button, drawer, content }) {
-    this._button = button;
-    this._drawer = drawer;
-    this._content = content;
+    this.button = button;
+    this.drawer = drawer;
+    this.content = content;
 
-    this._initialAppShell();
+    this.initialAppShell();
   }
 
-  _initialAppShell() {
+  initialAppShell() {
     DrawerInitiator.init({
-      button: this._button,
-      drawer: this._drawer,
-      content: this._content,
+      button: this.button,
+      drawer: this.drawer,
+      content: this.content,
     });
 
     // kita bisa menginisiasikan komponen lain bila ada
@@ -29,7 +25,7 @@ class App {
     const url = UrlParser.parseActiveUrlWithCombiner();
     console.log('Parsed URL:', url); // Tambahkan ini
     const page = routes[url];
-    this._content.innerHTML = await page.render();
+    this.content.innerHTML = await page.render();
     await page.afterRender();
   }
 }
