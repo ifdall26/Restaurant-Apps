@@ -10,7 +10,7 @@ describe('Liking A Resto', () => {
     await LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
       restaurant: {
-        id: 1,
+        id: 'rqdv5juczeskfw1e867',
       },
     });
 
@@ -22,7 +22,7 @@ describe('Liking A Resto', () => {
     await LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
       restaurant: {
-        id: 1,
+        id: 'rqdv5juczeskfw1e867',
       },
     });
     expect(document.querySelector('[aria-label="hapus restoran ini ke favorit"]')).toBeFalsy();
@@ -33,14 +33,16 @@ describe('Liking A Resto', () => {
     await LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
       restaurant: {
-        id: 1,
+        id: 'rqdv5juczeskfw1e867',
       },
     });
 
     document.querySelector('#likeButton').dispatchEvent(new Event('click'));
 
     // Memastikan film berhasil disukai
-    const restaurant = await FavoriteRestoIdb.getResto(1);
-    expect(restaurant).toEqual({ id: 1 });
+    const restaurant = await FavoriteRestoIdb.getResto('rqdv5juczeskfw1e867');
+    expect(restaurant).toEqual({ id: 'rqdv5juczeskfw1e867' });
+
+    await FavoriteRestoIdb.deleteResto(1);
   });
 });
