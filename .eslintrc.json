@@ -19,6 +19,7 @@
         "no-alert" :"off",
         "comma-dangle":"off",
         "object-shorthand":"off",
+        "linebreak-style":"off",
         "no-restricted-globals" :"off"
     }
 }
