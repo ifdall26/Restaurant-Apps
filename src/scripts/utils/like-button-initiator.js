@@ -1,24 +1,21 @@
-/* eslint-disable linebreak-style */
 /* eslint-disable no-unused-vars */
-/* eslint-disable linebreak-style */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable no-empty-function */
-/* eslint-disable linebreak-style */
-/* eslint-disable no-trailing-spaces */
 import FavoriteRestoIdb from '../data/favorite-resto-idb';
-import { createLikeRestoButtonTemplate, createUnikeRestoButtonTemplate } from '../views/templates/template-creator';
- 
+import { createLikeRestoButtonTemplate, createUnlikeRestoButtonTemplate } from '../views/templates/template-creator';
+
 const LikeButtonInitiator = {
   async init({ likeButtonContainer, restaurant }) {
     this._likeButtonContainer = likeButtonContainer;
     this._resto = restaurant;
+    this._favoriteRestos = FavoriteRestoIdb;
 
     await this._renderButton();
   },
- 
+
   async _renderButton() {
     const { id } = this._resto;
- 
+
     if (await this._isRestoExist(id)) {
       this._renderLiked();
     } else {
@@ -27,29 +24,29 @@ const LikeButtonInitiator = {
   },
 
   async _isRestoExist(id) {
-    const restaurant = await FavoriteRestoIdb.getResto(id);
+    const restaurant = await this._favoriteRestos.getResto(id);
     return !!restaurant;
   },
 
   _renderLike() {
     this._likeButtonContainer.innerHTML = createLikeRestoButtonTemplate();
- 
+
     const likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', async () => {
-      await FavoriteRestoIdb.putResto(this._resto);
+      await this._favoriteRestos.putResto(this._resto);
       this._renderButton();
     });
   },
- 
+
   _renderLiked() {
-    this._likeButtonContainer.innerHTML = createUnikeRestoButtonTemplate();
- 
+    this._likeButtonContainer.innerHTML = createUnlikeRestoButtonTemplate();
+
     const likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', async () => {
-      await FavoriteRestoIdb.deleteResto(this._resto.id);
+      await this._favoriteRestos.deleteResto(this._resto.id);
       this._renderButton();
     });
   },
 };
- 
+
 export default LikeButtonInitiator;

@@ -84,12 +84,12 @@ const createLikeRestoButtonTemplate = () => `
   </button>
 `;
 
-const createUnikeRestoButtonTemplate = () => `
+const createUnlikeRestoButtonTemplate = () => `
   <button aria-label="hapus restoran ini ke favorit" id="likeButton" class="like">
     <i class="fa fa-heart" aria-hidden="true"></i>
   </button>
 `;
 
 export {
-  createRestoListTemplate, createRestoDetailTemplate, createLikeRestoButtonTemplate, createUnikeRestoButtonTemplate
+  createRestoListTemplate, createRestoDetailTemplate, createLikeRestoButtonTemplate, createUnlikeRestoButtonTemplate
 };
