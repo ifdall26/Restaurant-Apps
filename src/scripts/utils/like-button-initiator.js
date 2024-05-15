@@ -1,11 +1,11 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable no-empty-function */
-import FavoriteRestoIdb from '../data/favorite-resto-idb';
 import { createLikeRestoButtonTemplate, createUnlikeRestoButtonTemplate } from '../views/templates/template-creator';
 
 const LikeButtonInitiator = {
-  async init({ likeButtonContainer, restaurant }) {
+  // eslint-disable-next-line no-shadow
+  async init({ likeButtonContainer, favoriteRestos: FavoriteRestoIdb, restaurant }) {
     this._likeButtonContainer = likeButtonContainer;
     this._resto = restaurant;
     this._favoriteRestos = FavoriteRestoIdb;
