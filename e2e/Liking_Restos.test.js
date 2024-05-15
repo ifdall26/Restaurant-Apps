@@ -14,7 +14,13 @@ Scenario('liking one restaurants', ({ I }) => {
   I.see('Tidak ada Restoran yang Ditampilkan', '.resto-nothing');
   I.amOnPage('/');
 
-  // pause();
   I.seeElement('.restaurant a');
   I.click(locate('.restaurant a').first());
+
+  I.seeElement('#likeButton');
+  I.click('#likeButton');
+
+  I.amOnPage('/#/favorite');
+  I.seeElement('.restaurant');
+  pause();
 });
