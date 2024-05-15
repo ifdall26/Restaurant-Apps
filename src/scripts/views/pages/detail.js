@@ -7,8 +7,9 @@
 /* eslint-disable linebreak-style */
 import UrlParser from '../../routes/url-parser';
 import RestoDBSource from '../../data/restodb-source';
-import { createRestoDetailTemplate, createLikeButtonTemplate } from '../templates/template-creator';
+import { createRestoDetailTemplate } from '../templates/template-creator';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
+import FavoriteRestoIdb from '../../data/favorite-resto-idb';
 
 // Fungsi untuk menambahkan event listener untuk form review
 const addReviewFormListener = () => {
@@ -74,8 +75,10 @@ const Detail = {
     const restaurant = await RestoDBSource.DetailRestaurant(url.id);
     const restaurantContainer = document.querySelector('#restaurant');
     restaurantContainer.innerHTML = createRestoDetailTemplate(restaurant);
+
     LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
+      favoriteRestos: FavoriteRestoIdb,
       restaurant: {
         id: restaurant.id,
         name: restaurant.name,

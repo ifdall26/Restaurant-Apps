@@ -5,10 +5,10 @@ import { createLikeRestoButtonTemplate, createUnlikeRestoButtonTemplate } from '
 
 const LikeButtonInitiator = {
   // eslint-disable-next-line no-shadow
-  async init({ likeButtonContainer, favoriteRestos: FavoriteRestoIdb, restaurant }) {
+  async init({ likeButtonContainer, favoriteRestos, restaurant }) {
     this._likeButtonContainer = likeButtonContainer;
     this._resto = restaurant;
-    this._favoriteRestos = FavoriteRestoIdb;
+    this._favoriteRestos = favoriteRestos;
 
     await this._renderButton();
   },
