@@ -12,7 +12,7 @@ const Favorite = {
     return `
       <h2>Restoran Favoritmu:)</h2>
       <hr>
-      <div id="restaurant-list"></div>
+      <div id="restaurant-list" class="resto"></div>
     `;
   },
 
@@ -20,10 +20,17 @@ const Favorite = {
     const restaurants = await FavoriteRestoIdb.getAllRestos();
     const restaurantContainer = document.querySelector('#restaurant-list');
     
-    restaurants.forEach((restaurant) => {
-      restaurantContainer.innerHTML += createRestoListTemplate(restaurant);
-    });
+    if (restaurants.length === 0) {
+      // Tampilkan pesan "Tidak ada Restoran yang Ditampilkan"
+      restaurantContainer.innerHTML = '<p class="resto-nothing">Tidak ada Restoran yang Ditampilkan</p>';
+    } else {
+      // Tampilkan daftar restoran
+      restaurants.forEach((restaurant) => {
+        restaurantContainer.innerHTML += createRestoListTemplate(restaurant);
+      });
+    }
   },
 };
 
 export default Favorite;
+
