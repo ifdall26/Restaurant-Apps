@@ -25,7 +25,8 @@
     <button id="theme-toggle" class="rotate"></button>
     <header>
       <div class="header-left">
-        <img src="./images/catalog_logo.png" alt="Restaurant Catalog Logo" />
+        <img src="./images/catalog_logo.png" 
+              alt="Restaurant Catalog Logo">
         <h1>Jelajah Rasa</h1>
       </div>
       <button class="drawer-button" id="hamburgerButton" aria-label="Menu">☰</button>
@@ -45,11 +46,14 @@
     </header>
 
     <div class="hero">
-      <img
-        src="./images/heros/hero-image_2.jpg"
-        alt="Hero Image"
-        class="hero-image"
-      />
+      <picture>
+        <source media="(max-width: 600px)" srcset="./images/hero-image_2-small.jpg">
+        <img
+          src="./images/hero-image_2-large.jpg"
+          alt="Hero Image"
+          class="hero-image"
+        />
+      </picture>
     </div>
 
     <main id="mainContent" tabindex="0"></main>

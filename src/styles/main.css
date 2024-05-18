@@ -42,7 +42,7 @@
   border-radius: 50%;
   text-wrap: wrap;
   position: fixed;
-  top: 75px;
+  top: 90px;
   right: 20px;
 }
 
@@ -67,9 +67,9 @@ img {
 /* Style untuk header */
 header {
   background-color: var(--header-bg);
-  padding-left: 5px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -84,6 +84,10 @@ header {
 .header-left {
   display: flex;
   align-items: center;
+}
+
+.header-left img {
+  border: .5px solid black;
 }
 
 /* Style untuk logo */
@@ -302,7 +306,7 @@ hr {
   nav {
     display: none;
     position: absolute;
-    top: 50px;
+    top: 70px;
     left: 0;
     width: 100%;
     background-color: var(--header-bg);
@@ -447,6 +451,7 @@ footer {
 .drawer-button {
   width: 44px;
   height: 44px;
+  top: 7px;
 }
 
 .drawer-button,
