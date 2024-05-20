@@ -1,24 +1,22 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable quotes */
-/* eslint-disable linebreak-style */
-/* eslint-disable func-names */
-/* eslint-disable linebreak-style */
-/* eslint-disable no-use-before-define */
-/* eslint-disable no-param-reassign */
-/* eslint-disable linebreak-style */
 /* eslint-disable no-unused-vars */
+/* eslint-disable no-param-reassign */
+/* eslint-disable func-names */
+/* eslint-disable no-undef */
+/* eslint-disable no-use-before-define */
 import 'regenerator-runtime';
 import '../styles/main.css';
-import App from './views/app';
 import swRegister from './utils/sw-register';
 
-const app = new App({
-  button: document.querySelector('#hamburgerButton'),
-  drawer: document.querySelector('#navigationDrawer'),
-  content: document.querySelector('#mainContent'),
-});
+document.addEventListener('DOMContentLoaded', async () => {
+  // Lazy load App module
+  const module = await import(/* webpackChunkName: "lazy-loaded-app" */ './views/app');
+  const App = module.default;
+  const app = new App({
+    button: document.querySelector('#hamburgerButton'),
+    drawer: document.querySelector('#navigationDrawer'),
+    content: document.querySelector('#mainContent'),
+  });
 
-document.addEventListener("DOMContentLoaded", () => {
   // event listener untuk drawer button
   const drawerButton = document.querySelector('.drawer-button');
   const navigationMenu = document.querySelector('nav');
@@ -28,10 +26,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // event listener untuk "Skip to Content"
-  const skipToContentLink = document.querySelector(".skip-to-content");
-  const mainContent = document.getElementById("mainContent");
+  const skipToContentLink = document.querySelector('.skip-to-content');
+  const mainContent = document.getElementById('mainContent');
 
-  skipToContentLink.addEventListener("click", () => {
+  skipToContentLink.addEventListener('click', () => {
     mainContent.focus();
   });
 
