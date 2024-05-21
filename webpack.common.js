@@ -5,16 +5,19 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
   entry: {
     app: path.resolve(__dirname, 'src/scripts/index.js'),
-    sw: path.resolve(__dirname, 'src/scripts/sw.js'),
+    // sw: path.resolve(__dirname, 'src/scripts/sw.js'), // Hapus entry point ini
   },
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    clean: true, // Membersihkan folder dist sebelum build
   },
+  devtool: 'source-map', // Menambahkan source-map untuk debugging
   module: {
     rules: [
       {
@@ -55,6 +58,31 @@ module.exports = {
       ],
     }),
     new BundleAnalyzerPlugin(),
+    new WorkboxWebpackPlugin.GenerateSW({
+      swDest: 'sw.bundle.js',
+      clientsClaim: true,
+      skipWaiting: true,
+      runtimeCaching: [
+        {
+          urlPattern: /\.(?:png|jpg|jpeg|svg|gif)$/,
+          handler: 'CacheFirst',
+          options: {
+            cacheName: 'images',
+            expiration: {
+              maxEntries: 50,
+              maxAgeSeconds: 30 * 24 * 60 * 60, // 30 hari
+            },
+          },
+        },
+        {
+          urlPattern: /\.(?:css|js)$/,
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'static-resources',
+          },
+        },
+      ],
+    }),
   ],
   optimization: {
     splitChunks: {
