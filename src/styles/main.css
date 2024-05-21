@@ -220,7 +220,7 @@ hr {
   transform: var(--resto-scale);
 }
 
-.restaurant-image {
+.restaurant img{
   border-top-right-radius: 35px;
   border-bottom-left-radius: 35px;
   width: 100%;

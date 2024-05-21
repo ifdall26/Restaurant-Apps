@@ -1,14 +1,14 @@
 import CONFIG from '../../globals/config';
 import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
- 
+
 const START = 10;
 const NUMBER_OF_IMAGES = 100;
 
 const createRestoListTemplate = (restaurant) => `
   <div id="restaurant-list" class="restaurant" tabindex="0">
-    <a class="lazyload" href="#/detail/${restaurant.id}" style="text-decoration: none;">
-      <img src="https://restaurant-api.dicoding.dev/images/small/${restaurant.pictureId}" alt="${restaurant.name}" class="restaurant-image" crossorigin="anonymous" />
+    <a href="#/detail/${restaurant.id}" style="text-decoration: none;">
+      <img class="lazyload" src="https://restaurant-api.dicoding.dev/images/small/${restaurant.pictureId}" alt="${restaurant.name}" class="restaurant-image" crossorigin="anonymous" />
       <div class="restaurant-info">
         <h4>Rating: ${restaurant.rating}</h4>
         <h2>${restaurant.name}</h2>
