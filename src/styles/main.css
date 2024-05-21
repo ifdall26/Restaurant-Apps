@@ -610,6 +610,7 @@ img {
 .review-form input[type="text"],
 .review-form select,
 .review-form textarea {
+  min-height: 44px;
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -624,6 +625,7 @@ img {
 
 .review-form button[type="submit"] {
   padding: 10px 20px;
+  min-height: 44px;
   background-color: var(--header-bg);
   color: #fff;
   border: none;
